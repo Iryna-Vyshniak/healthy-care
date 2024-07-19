@@ -26,8 +26,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning={true}>
-      <body className={cn('min-h-screen bg-dark-300 font-sans antialiased', fontSans.variable)}>
-        <ThemeProvider attribute='class' defaultTheme='dark'>
+      <body
+        className={cn(
+          'min-h-screen remove-scrollbar dark:bg-dark-300 bg-light font-sans antialiased text-slate-950 dark:text-white bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] dark:from-[#00032a] dark:via-slate-950 dark:to-dark-200 bg-no-repeat bg-cover',
+          fontSans.variable
+        )}
+      >
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem={true}
+          enableColorScheme={true}
+        >
           {children}
         </ThemeProvider>
       </body>
