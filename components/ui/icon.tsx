@@ -12,6 +12,7 @@ export const commonIcons = {
   ARROW: 'arrow',
   CANCELLED: 'cancelled',
   EMAIL: 'email',
+  PHONE: 'phone',
   PENDING: 'pending',
   UPLOAD: 'upload',
 } as const;
