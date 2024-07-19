@@ -16,7 +16,13 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        'mob': '480px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1440px',
+        '3xl': '1536px',
       },
     },
     extend: {
@@ -27,8 +33,9 @@ const config = {
           700: "#0D2A1F",
         },
         blue: {
-          500: "#E2EAFF",
-          600: "#CAD6FF",
+          400: "#E2EAFF",
+          500: "#CAD6FF",
+          600: "#809CFF",
           700: "#2260FF",
 
         },
@@ -51,6 +58,7 @@ const config = {
         events: "url('/assets/images/events-bg.png')",
         awaiting: "url('/assets/images/awaiting-bg.png')",
         abondened: "url('/assets/images/abondened-bg.png')",
+        'gradient-custom': 'linear-gradient(90deg, #a4d9ff 0%, #809CFF 50%, #2260FF 100%)',
       },
       borderRadius: {
         lg: "var(--radius)",

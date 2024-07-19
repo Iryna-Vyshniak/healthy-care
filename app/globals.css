@@ -2,7 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 /* ---------------------- TAILWIND STYLES ---------------------- */
+
 @layer base {
   /* Remove scrollbar */
   .remove-scrollbar::-webkit-scrollbar {
@@ -48,11 +65,11 @@
   }
 
   .header {
-    @apply text-32-bold md:text-36-bold;
+    @apply text-32-bold md:text-36-bold text-blue-700 drop-shadow-[0_0.5px_0.05px_rgba(0,0,20,1)] dark:drop-shadow-[0_0.5px_0.05px_rgba(250,250,250,1)];
   }
 
   .sub-header {
-    @apply text-18-bold md:text-24-bold;
+    @apply text-18-bold md:text-24-bold drop-shadow-[0_0.5px_0.05px_rgba(0,0,20,1)];
   }
 
   .container {
@@ -156,6 +173,10 @@
     @apply text-[18px] leading-[24px] font-bold;
   }
 
+  .text-24-semibold {
+    @apply text-[24px] leading-[28px] font-semibold;
+  }
+
   .text-16-semibold {
     @apply text-[16px] leading-[20px] font-semibold;
   }
@@ -182,15 +203,15 @@
 
   /* ----------------------  SHADCN OVERRIDES ---------------------- */
   .shad-primary-btn {
-    @apply bg-green-500 text-white !important;
+    @apply bg-blue-700 text-white hover:bg-blue-800 focus:bg-blue-800 rounded-[13px] transition duration-200 ease-in-out !important;
   }
 
   .shad-danger-btn {
-    @apply bg-red-700 text-white !important;
+    @apply bg-red-700 text-white hover:bg-red-800 focus:bg-red-800 transition duration-200 ease-in-out !important;
   }
 
-  .shad-gray-btn {
-    @apply border border-dark-500 cursor-pointer bg-dark-400 text-white !important;
+  .shad-light-btn {
+    @apply border border-blue-500 cursor-pointer bg-blue-500 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white text-blue-700 rounded-[13px] transition duration-200 ease-in-out !important;
   }
 
   .shad-input-label {
@@ -198,7 +219,7 @@
   }
 
   .shad-input {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-[13px] transition duration-200 ease-in-out !important;
   }
 
   .shad-input-icon {
@@ -206,7 +227,7 @@
   }
 
   .shad-textArea {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 transition duration-200 ease-in-out !important;
   }
 
   .shad-combobox-item {
@@ -230,11 +251,11 @@
   }
 
   .shad-dialog button {
-    @apply focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+    @apply focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 transition duration-200 ease-in-out !important;
   }
 
   .shad-error {
-    @apply text-red-400 !important;
+    @apply text-red-500 dark:text-red-900 !important;
   }
 
   .shad-table {
@@ -262,24 +283,24 @@
   }
 
   .shad-sheet-content button {
-    @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+    @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 transition duration-200 ease-in-out !important;
   }
 
   /* ---------------------- REACT PHONE NUMBER INPUT OVERRIDES ---------------------- */
   .input-phone {
-    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-dark-400 placeholder:text-dark-600 border-dark-500 !important;
+    @apply h-11 w-full rounded-[13px] pl-3 text-sm border-none bg-blue-500 text-blue-700  dark:text-white placeholder:text-blue-600 dark:bg-dark-400 dark:placeholder:text-dark-600 transition duration-200 ease-in-out !important;
   }
 }
 
 /*  ---------------------- REACT PHONE NUMBER INPUT OVERRIDES  ---------------------- */
 .PhoneInputInput {
   outline: none;
+  border: none;
   margin-left: 4px;
-  background: #1a1d21;
+  padding-left: 4px;
+  height: 2.75rem;
+  background: transparent;
   font-size: 14px;
-  font-weight: 500;
-}
-
-.PhoneInputInput::placeholder {
-  color: #1a1d21;
+  border-radius: 13px;
+  width: 100%;
 }
