@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { FormField, FormItem, FormLabel,  FormMessage } from '@/components/ui/form';
+import { FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 
 import { FormFieldType } from '@/shared/constants';
 

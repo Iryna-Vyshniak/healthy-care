@@ -6,15 +6,16 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { UserFomValidation } from '@/lib/validation';
+import { UserFormValidation } from '@/lib/validation';
 
 import { Form } from '@/components/ui/form';
-import { commonIcons, iconTypes } from '../ui/icon';
+import { commonIcons, iconTypes } from '@/components/ui/icon';
 
-import CustomFormField from '../CustomFormField';
-import SubmitButton from '../SubmitButton';
+import DynamicFormField from '@/components/fields/DynamicFormField';
+import SubmitButton from '@/components/common/SubmitButton';
 
-import { FormFieldType } from '@/constants';
+import { FormFieldType } from '@/shared/constants';
+import { createUser } from '@/lib/actions/patient.actions';
 
 // Building forms with React Hook Form and Zod. Use shadcn/ui/Form
 // npx shadcn-ui@latest add form
@@ -24,8 +25,8 @@ const PatientForm = () => {
   const router = useRouter();
   console.log('router: ', router);
   // 1. Define form
-  const form = useForm<z.infer<typeof UserFomValidation>>({
-    resolver: zodResolver(UserFomValidation),
+  const form = useForm<z.infer<typeof UserFormValidation>>({
+    resolver: zodResolver(UserFormValidation),
     defaultValues: {
       name: '',
       email: '',
@@ -34,12 +35,18 @@ const PatientForm = () => {
   });
 
   // 2. Define a submit handler.
-  async function onSubmit({ name, email, phone }: z.infer<typeof UserFomValidation>) {
+  async function onSubmit({ name, email, phone }: z.infer<typeof UserFormValidation>) {
     // ✅ This will be type-safe and validated.
     setIsLoading(true);
     try {
       const userData = { name, email, phone };
       console.log('userData: ', userData);
+      const user = await createUser(userData);
+      console.log('user: ', user);
+
+      if (user) {
+        router.push(`/patients/${user.$id}/register`);
+      }
     } catch (error) {
       console.log(error);
     } finally {
@@ -54,7 +61,7 @@ const PatientForm = () => {
           <h1 className='header'>Welcome</h1>
           <p className='text-dark-700'>Schedule your first consultation</p>
         </section>
-        <CustomFormField
+        <DynamicFormField
           control={form.control}
           fieldType={FormFieldType.INPUT}
           name='name'
@@ -63,7 +70,7 @@ const PatientForm = () => {
           iconSrc={{ name: commonIcons.USER, type: iconTypes.COMMON }}
           iconAlt='user'
         />
-        <CustomFormField
+        <DynamicFormField
           control={form.control}
           fieldType={FormFieldType.INPUT}
           name='email'
@@ -72,7 +79,7 @@ const PatientForm = () => {
           iconSrc={{ name: commonIcons.EMAIL, type: iconTypes.COMMON }}
           iconAlt='email'
         />
-        <CustomFormField
+        <DynamicFormField
           control={form.control}
           fieldType={FormFieldType.PHONE_INPUT}
           name='phone'

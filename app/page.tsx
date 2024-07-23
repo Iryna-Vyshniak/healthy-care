@@ -2,7 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import PatientForm from '@/components/forms/PatientForm';
-import LogoTitle from '@/components/LogoTitle';
+import LogoTitle from '@/components/common/LogoTitle';
+import Logo from '@/components/common/Logo';
 
 export default function Home() {
   return (
@@ -11,14 +12,8 @@ export default function Home() {
       <section className='container my-auto'>
         <div className='sub-container max-w-[31rem]'>
           <div className='flex items-center justify-start gap-2 mb-12'>
-            <Image
-              src='/assets/icons/logo.svg'
-              alt='logo'
-              width={1000}
-              height={1000}
-              className='h-8 w-fit'
-            />
-            <LogoTitle />
+            <Logo />
+            <LogoTitle title='Healthy' subtitle='Care' />
           </div>
 
           <PatientForm />
