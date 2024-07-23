@@ -69,7 +69,7 @@ body {
   }
 
   .sub-header {
-    @apply text-18-bold md:text-24-bold drop-shadow-[0_0.5px_0.05px_rgba(0,0,20,1)];
+    @apply text-24-bold md:text-24-bold text-slate-950  dark:text-white;
   }
 
   .container {
@@ -112,7 +112,7 @@ body {
 
   /* ---------------------- FORM ---------------------- */
   .radio-group {
-    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-dark-500 bg-dark-400 p-3;
+    @apply flex h-full w-fit min-w-fit flex-1 items-center gap-2 border border-dashed bg-blue-500 border-blue-500 dark:border-dark-500 dark:bg-dark-400 p-3 text-blue-700 dark:text-white placeholder:text-blue-600 rounded-[13px] transition duration-200 ease-in-out !important;
   }
 
   .checkbox-label {
@@ -219,7 +219,7 @@ body {
   }
 
   .shad-input {
-    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-[13px] transition duration-200 ease-in-out !important;
+    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-none border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-[13px] transition duration-200 ease-in-out !important;
   }
 
   .shad-input-icon {
@@ -227,7 +227,7 @@ body {
   }
 
   .shad-textArea {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 transition duration-200 ease-in-out !important;
+    @apply bg-dark-400 placeholder:text-dark-600 border-dashed border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 transition duration-200 ease-in-out !important;
   }
 
   .shad-combobox-item {
@@ -290,6 +290,11 @@ body {
   .input-phone {
     @apply h-11 w-full rounded-[13px] pl-3 text-sm border-none bg-blue-500 text-blue-700  dark:text-white placeholder:text-blue-600 dark:bg-dark-400 dark:placeholder:text-dark-600 transition duration-200 ease-in-out !important;
   }
+
+  /*  ---------------------- REACT PHONE NUMBER INPUT OVERRIDES  ---------------------- */
+  .date-picker {
+    @apply h-11  w-full rounded-[13px] overflow-hidden border-transparent  pl-3 text-sm border-none bg-blue-500 text-blue-700  dark:text-white placeholder:text-blue-600 dark:bg-dark-400 dark:placeholder:text-dark-600 transition duration-200 ease-in-out outline-none !important;
+  }
 }
 
 /*  ---------------------- REACT PHONE NUMBER INPUT OVERRIDES  ---------------------- */
@@ -303,4 +308,63 @@ body {
   font-size: 14px;
   border-radius: 13px;
   width: 100%;
+}
+
+/* ----------------------  REACT-DATEPICKER OVERRIDES ---------------------- */
+.react-datepicker-wrapper.date-picker {
+  display: flex;
+  align-items: center;
+}
+
+.react-datepicker,
+.react-datepicker__time,
+.react-datepicker__header,
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker-time__header {
+  background-color: #e2eaff !important;
+  border-color: #809cff !important;
+  color: #020617 !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker-time__header {
+  color: #2260ff !important;
+}
+
+.react-datepicker__triangle {
+  fill: #809cff !important;
+  color: #809cff !important;
+  stroke: #809cff !important;
+}
+
+.react-datepicker__time-list-item:hover {
+  background-color: #0f172a !important;
+}
+
+.react-datepicker__input-container input {
+  background-color: transparent !important;
+  width: 100%;
+  outline: none;
+}
+
+.react-datepicker__day--selected {
+  background-color: #2260ff !important;
+  color: #ffffff !important;
+  border-radius: 4px;
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: #2260ff !important;
+}
+
+.react-datepicker__time-container {
+  border-left: 1px solid #0f172a !important;
+}
+
+.react-datepicker__time-list-item {
+  display: flex !important;
+  align-items: center !important;
 }
