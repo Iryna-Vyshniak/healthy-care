@@ -15,6 +15,9 @@ export const commonIcons = {
   PHONE: 'phone',
   PENDING: 'pending',
   UPLOAD: 'upload',
+  SCHEDULE: 'schedule',
+  HOME: 'home',
+  JOB: 'job',
 } as const;
 
 export type CommonIcons = (typeof commonIcons)[keyof typeof commonIcons];
