@@ -1,5 +1,6 @@
 export const Doctors = [
     {
+        "id": "3ndsduuu3pqs-",
         "full_name": "Alexander Bennett",
         "title": "Dr.",
         "degree": "Ph.D.",
@@ -37,10 +38,11 @@ export const Doctors = [
         }
     },
     {
+        "id": "2ndscusr3",
         "full_name": "Michael Davidson",
         "title": "Dr.",
         "degree": "M.D.",
-        "specialty": "Solar Dermatology",
+        "specialty": "Interventional Cardiology",
         "image": "/assets/images/doctors/dr-michael-davidson.png",
         "contact_info": {
             "phone": "234-567-8901",
@@ -54,30 +56,31 @@ export const Doctors = [
         },
         "professional_info": {
             "years_of_experience": 20,
-            "current_position": "Chief Dermatologist at ABC Clinic",
+            "current_position": "Chief Interventional Cardiologist at ABC Clinic",
             "publications": [
                 {
-                    "title": "Impact of UV Radiation on Skin",
-                    "journal": "Solar Derm Journal",
+                    "title": "Advancements in Interventional Cardiology",
+                    "journal": "Journal of Cardiac Intervention",
                     "year": 2019
                 },
                 {
-                    "title": "Preventive Measures in Solar Dermatology",
-                    "journal": "Journal of Skin Health",
+                    "title": "Preventive Measures in Cardiology",
+                    "journal": "Journal of Heart Health",
                     "year": 2021
                 }
             ],
             "affiliations": [
-                "American Society for Photobiology",
-                "Dermatology Research Association"
+                "American College of Cardiology",
+                "Society for Cardiovascular Angiography and Interventions"
             ]
         }
     },
     {
+        "id": "iue93-92rusdc2",
         "full_name": "Olivia Turner",
         "title": "Dr.",
         "degree": "M.D.",
-        "specialty": "Dermato-Endocrinology",
+        "specialty": "Reproductive Endocrinology",
         "image": "/assets/images/doctors/dr-olivia-turner.png",
         "contact_info": {
             "phone": "345-678-9012",
@@ -91,26 +94,27 @@ export const Doctors = [
         },
         "professional_info": {
             "years_of_experience": 10,
-            "current_position": "Endocrinology Specialist at DEF Hospital",
+            "current_position": "Reproductive Endocrinology Specialist at DEF Hospital",
             "publications": [
                 {
-                    "title": "Hormonal Influences on Skin Conditions",
-                    "journal": "Endocrine Derm Journal",
+                    "title": "Hormonal Influences on Reproductive Health",
+                    "journal": "Journal of Reproductive Endocrinology",
                     "year": 2022
                 },
                 {
-                    "title": "Dermato-Endocrine Interactions",
+                    "title": "Advances in Reproductive Endocrinology",
                     "journal": "Journal of Medical Endocrinology",
                     "year": 2020
                 }
             ],
             "affiliations": [
                 "Endocrine Society",
-                "Dermatology Endocrine Group"
+                "American Society for Reproductive Medicine"
             ]
         }
     },
     {
+        "id": "9384jdw932ax",
         "full_name": "Sophia Martinez",
         "title": "Dr.",
         "degree": "Ph.D.",
@@ -148,6 +152,7 @@ export const Doctors = [
         }
     },
     {
+        "id": "3423idnq9312/",
         "full_name": "Liam Walker",
         "title": "Dr.",
         "degree": "M.D.",
@@ -185,10 +190,11 @@ export const Doctors = [
         }
     },
     {
+        "id": "92432dj9e-9212d",
         "full_name": "Emma Clark",
         "title": "Dr.",
         "degree": "Ph.D.",
-        "specialty": "Dermato-Immunology",
+        "specialty": "Pain Medicine (Anesthesiology)",
         "image": "/assets/images/doctors/dr-emma-clark.webp",
         "contact_info": {
             "phone": "678-901-2345",
@@ -202,26 +208,27 @@ export const Doctors = [
         },
         "professional_info": {
             "years_of_experience": 6,
-            "current_position": "Immunology Expert at MNO Research Institute",
+            "current_position": "Anesthesiology Specialist at MNO Research Institute",
             "publications": [
                 {
-                    "title": "Immunological Responses in Skin",
-                    "journal": "Immuno-Dermatology Journal",
+                    "title": "Advances in Anesthetic Techniques",
+                    "journal": "Journal of Anesthesiology",
                     "year": 2017
                 },
                 {
-                    "title": "Autoimmune Skin Diseases",
-                    "journal": "Journal of Dermato-Immunology",
+                    "title": "Pain Management in Surgical Procedures",
+                    "journal": "Anesthesia and Pain Journal",
                     "year": 2019
                 }
             ],
             "affiliations": [
-                "American Association of Immunologists",
-                "Dermato-Immunology Society"
+                "American Society of Anesthesiologists",
+                "International Anesthesia Research Society"
             ]
         }
     },
     {
+        "id": "o2ieqx0q20scxv.",
         "full_name": "Noah Harris",
         "title": "Dr.",
         "degree": "M.D.",
@@ -259,6 +266,7 @@ export const Doctors = [
         }
     },
     {
+        "id": "e32euednnxap02",
         "full_name": "Robert Williams",
         "title": "Dr.",
         "degree": "Ph.D.",
