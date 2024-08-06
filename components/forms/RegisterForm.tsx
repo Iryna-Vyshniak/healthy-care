@@ -17,6 +17,9 @@ import DynamicFormField from '@/components/fields/DynamicFormField';
 import SubmitButton from '@/components/common/SubmitButton';
 
 import { FormFieldType, GenderOptions, PatientFormDefaultValues } from '@/shared/constants';
+import { SelectItem } from '../ui/select';
+import { Doctors } from '@/shared/data/data';
+import Image from 'next/image';
 
 // Building forms with React Hook Form and Zod. Use shadcn/ui/Form
 // npx shadcn-ui@latest add form
@@ -174,6 +177,33 @@ const RegisterForm = ({ user }: { user: User }) => {
             <h2 className='sub-header'>Medical Information</h2>
           </div>
         </section>
+
+        <DynamicFormField
+          control={form.control}
+          fieldType={FormFieldType.SELECT}
+          name='primaryPhysician'
+          label='Primary Physician'
+          placeholder='Select a physician'
+        >
+          {Doctors.map((doctor) => (
+            <SelectItem key={doctor.id} value={doctor.full_name}>
+              <div className='flex items-center gap-2 cursor-pointer'>
+                <Image
+                  src={doctor.image}
+                  alt={doctor.full_name}
+                  width={32}
+                  height={32}
+                  className='rounded-full border border-dark-500'
+                />
+                <p>
+                  {doctor.title} {doctor.full_name}, {doctor.degree}{' '}
+                  <span className='text-slate-800 dark:text-white'>{doctor.specialty}</span>
+                </p>
+              </div>
+            </SelectItem>
+          ))}
+        </DynamicFormField>
+
         <div className='flex flex-col gap-6 xl:flex-row'></div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
