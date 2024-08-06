@@ -9,6 +9,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { FormControl } from '@/components/ui/form';
 import Icon, { iconSizes } from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 import { FormFieldType } from '@/shared/constants';
 
@@ -83,10 +84,20 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
           </FormControl>
         </div>
       );
-    // case FormFieldType.SKELETON:
-    //   return (
-    //     <div className='flex items-center justify-start rounded-[13px] border border-dashed border-blue-500 bg-blue-500 dark:border-dark-500 dark:bg-dark-400'></div>
-    //   );
+    case FormFieldType.SELECT:
+      return (
+        <FormControl>
+          <Select onValueChange={field.onChange} defaultValue={field.value}>
+            <FormControl>
+              <SelectTrigger className='shad-select-trigger'>
+                {' '}
+                <SelectValue placeholder={placeholder} />
+              </SelectTrigger>
+            </FormControl>
+            <SelectContent className='shad-select-content'>{props.children}</SelectContent>
+          </Select>
+        </FormControl>
+      );
     default:
       break;
   }
