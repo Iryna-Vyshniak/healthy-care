@@ -51,3 +51,40 @@ declare type SearchParamProps = {
     params: { [key: string]: string };
     searchParams: { [key: string]: string | string[] | undefined };
 };
+
+interface Address {
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+}
+
+interface ContactInfo {
+    phone: string;
+    email: string;
+    address: Address;
+}
+
+interface Publication {
+    title: string;
+    journal: string;
+    year: number;
+}
+
+interface ProfessionalInfo {
+    years_of_experience: number;
+    current_position: string;
+    publications: Publication[];
+    affiliations: string[];
+}
+
+interface Doctor {
+    id: string;
+    full_name: string;
+    title: string;
+    degree: string;
+    specialty: string;
+    image: string;
+    contact_info: ContactInfo;
+    professional_info: ProfessionalInfo;
+}
