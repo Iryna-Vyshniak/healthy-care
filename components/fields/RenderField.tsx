@@ -10,6 +10,7 @@ import { FormControl } from '@/components/ui/form';
 import Icon, { iconSizes } from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
 
 import { FormFieldType } from '@/shared/constants';
 
@@ -96,6 +97,17 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             </FormControl>
             <SelectContent className='shad-select-content'>{props.children}</SelectContent>
           </Select>
+        </FormControl>
+      );
+    case FormFieldType.TEXTAREA:
+      return (
+        <FormControl>
+          <Textarea
+            placeholder={placeholder}
+            {...field}
+            className='shad-textArea'
+            disabled={props.disabled}
+          />
         </FormControl>
       );
     default:
