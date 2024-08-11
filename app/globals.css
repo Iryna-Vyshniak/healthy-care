@@ -227,7 +227,7 @@ body {
   }
 
   .shad-textArea {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dashed border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 transition duration-200 ease-in-out !important;
+    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-dashed border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0  rounded-[13px] transition duration-200 ease-in-out !important;
   }
 
   .shad-combobox-item {
@@ -239,11 +239,11 @@ body {
   }
 
   .shad-select-trigger {
-    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-none border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-[13px] transition duration-200 ease-in-out  focus:ring-0 focus:ring-offset-0 !important;
+    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600  border-dashed border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-[13px] transition duration-200 ease-in-out  focus:ring-0 focus:ring-offset-0 !important;
   }
 
   .shad-select-content {
-    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-none border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 !important;
+    @apply bg-blue-400 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-dashed border-blue-500  dark:bg-dark-600 dark:placeholder:text-dark-300 dark:border-dark-500 rounded-[13px] !important;
   }
 
   .shad-dialog {
