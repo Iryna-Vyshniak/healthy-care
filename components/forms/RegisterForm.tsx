@@ -212,7 +212,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             label='Insurance Provider'
             placeholder='RedCross'
             iconSrc={{ name: commonIcons.HOME, type: iconTypes.COMMON }}
-            iconAlt='user'
+            iconAlt='Insurance Provider'
           />
           <DynamicFormField
             control={form.control}
@@ -221,10 +221,25 @@ const RegisterForm = ({ user }: { user: User }) => {
             label='Insurance Policy Number'
             placeholder='EJ7357352277'
             iconSrc={{ name: commonIcons.INSURANCE_POLICY, type: iconTypes.COMMON }}
-            iconAlt='user'
+            iconAlt='Insurance Policy Number'
           />
         </div>
-        <div className='flex flex-col gap-6 xl:flex-row'></div>
+        <div className='flex flex-col gap-6 xl:flex-row'>
+          <DynamicFormField
+            control={form.control}
+            fieldType={FormFieldType.TEXTAREA}
+            name='allergies'
+            label='Allergies (if any)'
+            placeholder='Amoxicillin, Aspirin, Pet Dander'
+          />
+          <DynamicFormField
+            control={form.control}
+            fieldType={FormFieldType.TEXTAREA}
+            name='currentMedication'
+            label='Current Medication (if any)'
+            placeholder='Loratadine 10 mg, Insulin Glargine 100 units/mL'
+          />
+        </div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
