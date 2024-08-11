@@ -195,7 +195,7 @@ const RegisterForm = ({ user }: { user: User }) => {
                   height={32}
                   className='rounded-full border border-dark-500'
                 />
-                <p>
+                <p className='flex flex-col lg:flex-row lg:gap-2 items-start justify-start'>
                   {doctor.title} {doctor.full_name}, {doctor.degree}{' '}
                   <span className='text-slate-800 dark:text-white'>{doctor.specialty}</span>
                 </p>
@@ -204,7 +204,26 @@ const RegisterForm = ({ user }: { user: User }) => {
           ))}
         </DynamicFormField>
 
-        <div className='flex flex-col gap-6 xl:flex-row'></div>
+        <div className='flex flex-col gap-6 xl:flex-row'>
+          <DynamicFormField
+            control={form.control}
+            fieldType={FormFieldType.INPUT}
+            name='insuranceProvider'
+            label='Insurance Provider'
+            placeholder='RedCross'
+            iconSrc={{ name: commonIcons.HOME, type: iconTypes.COMMON }}
+            iconAlt='user'
+          />
+          <DynamicFormField
+            control={form.control}
+            fieldType={FormFieldType.INPUT}
+            name='insurancePolicyNumber'
+            label='Insurance Policy Number'
+            placeholder='EJ7357352277'
+            iconSrc={{ name: commonIcons.INSURANCE_POLICY, type: iconTypes.COMMON }}
+            iconAlt='user'
+          />
+        </div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
