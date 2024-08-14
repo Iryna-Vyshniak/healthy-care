@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "fix": "yarn prettier:fix && yarn lint:fix",
+    "test-all": "yarn run prettier && yarn run lint && yarn run build",
+    "prepare": "husky"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -36,7 +42,12 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "husky": "^9.1.4",
     "postcss": "^8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
