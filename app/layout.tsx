@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 
-import './globals.css';
-
 import { cn } from '@/lib/utils';
+
 import { ThemeProvider } from '@/components/common/ThemeProvider';
+
+import './globals.css';
 
 const fontSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -28,7 +29,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning={true}>
       <body
         className={cn(
-          'min-h-screen remove-scrollbar dark:bg-dark-300 bg-light font-sans antialiased text-slate-950 dark:text-white bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] dark:from-[#00032a] dark:via-slate-950 dark:to-dark-200 bg-no-repeat bg-cover',
+          'remove-scrollbar bg-light min-h-screen bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] bg-cover bg-no-repeat font-sans text-slate-950 antialiased dark:bg-dark-300 dark:from-[#00032a] dark:via-slate-950 dark:to-dark-200 dark:text-white',
           fontSans.variable
         )}
       >

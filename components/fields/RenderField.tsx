@@ -1,18 +1,21 @@
+import { FormFieldType } from '@/shared/constants';
+import { E164Number } from 'libphonenumber-js';
 import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 // International phone number <input/> for React
 import PhoneInput from 'react-phone-number-input';
-import { E164Number } from 'libphonenumber-js';
-
 import 'react-phone-number-input/style.css';
-import 'react-datepicker/dist/react-datepicker.css';
 
 import { FormControl } from '@/components/ui/form';
 import Icon, { iconSizes } from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-
-import { FormFieldType } from '@/shared/constants';
 
 const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
   const {
@@ -39,7 +42,11 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             />
           )}
           <FormControl>
-            <Input placeholder={placeholder} {...field} className='shad-input border-0' />
+            <Input
+              placeholder={placeholder}
+              {...field}
+              className='shad-input border-0'
+            />
           </FormControl>
         </div>
       );
@@ -70,7 +77,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
               name={iconSrc.name}
               size={iconSizes.MEDIUM}
               type={iconSrc.type}
-              className='w-[24px] h-[24px] mx-2'
+              className='mx-2 h-[24px] w-[24px]'
             />
           )}
           <FormControl>
@@ -95,7 +102,9 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
             </FormControl>
-            <SelectContent className='shad-select-content'>{props.children}</SelectContent>
+            <SelectContent className='shad-select-content'>
+              {props.children}
+            </SelectContent>
           </Select>
         </FormControl>
       );

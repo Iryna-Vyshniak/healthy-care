@@ -45,7 +45,7 @@ body {
 @layer utilities {
   /* ---------------------- UTILITIES ---------------------- */
   .sidebar {
-    @apply remove-scrollbar w-full max-w-72 flex-col overflow-auto bg-black-800 px-7 py-10;
+    @apply remove-scrollbar bg-black-800 w-full max-w-72 flex-col overflow-auto px-7 py-10;
   }
 
   .left-sidebar {
@@ -69,7 +69,7 @@ body {
   }
 
   .sub-header {
-    @apply text-24-bold md:text-24-bold text-slate-950  dark:text-white;
+    @apply text-24-bold md:text-24-bold text-slate-950 dark:text-white;
   }
 
   .container {
@@ -112,7 +112,7 @@ body {
 
   /* ---------------------- FORM ---------------------- */
   .radio-group {
-    @apply flex h-full w-fit min-w-fit flex-1 items-center gap-2 border border-dashed bg-blue-500 border-blue-500 dark:border-dark-500 dark:bg-dark-400 p-3 text-blue-700 dark:text-white placeholder:text-blue-600 rounded-[13px] transition duration-200 ease-in-out !important;
+    @apply flex h-full w-fit min-w-fit flex-1 items-center gap-2 rounded-[13px] border border-dashed border-blue-500 bg-blue-500 p-3 text-blue-700 transition duration-200 ease-in-out placeholder:text-blue-600 dark:border-dark-500 dark:bg-dark-400 dark:text-white !important;
   }
 
   .checkbox-label {
@@ -121,7 +121,7 @@ body {
 
   /* ---------------------- File Upload ---------------------- */
   .file-upload {
-    @apply text-12-regular flex cursor-pointer  flex-col items-center justify-center gap-3 rounded-md border border-dashed border-dark-500 bg-dark-400 p-5;
+    @apply text-12-regular flex cursor-pointer flex-col items-center justify-center gap-3 rounded-md border border-dashed border-dark-500 bg-dark-400 p-5;
   }
 
   .file-upload_label {
@@ -158,60 +158,60 @@ body {
 
   /* ---------------------- TYPOGRAPHY ---------------------- */
   .text-36-bold {
-    @apply text-[36px] leading-[40px] font-bold;
+    @apply text-[36px] font-bold leading-[40px];
   }
 
   .text-24-bold {
-    @apply text-[24px] leading-[28px] font-bold;
+    @apply text-[24px] font-bold leading-[28px];
   }
 
   .text-32-bold {
-    @apply text-[32px] leading-[36px] font-bold;
+    @apply text-[32px] font-bold leading-[36px];
   }
 
   .text-18-bold {
-    @apply text-[18px] leading-[24px] font-bold;
+    @apply text-[18px] font-bold leading-[24px];
   }
 
   .text-24-semibold {
-    @apply text-[24px] leading-[28px] font-semibold;
+    @apply text-[24px] font-semibold leading-[28px];
   }
 
   .text-16-semibold {
-    @apply text-[16px] leading-[20px] font-semibold;
+    @apply text-[16px] font-semibold leading-[20px];
   }
 
   .text-16-regular {
-    @apply text-[16px] leading-[20px] font-normal;
+    @apply text-[16px] font-normal leading-[20px];
   }
 
   .text-14-medium {
-    @apply text-[14px] leading-[18px] font-medium;
+    @apply text-[14px] font-medium leading-[18px];
   }
 
   .text-14-regular {
-    @apply text-[14px] leading-[18px] font-normal;
+    @apply text-[14px] font-normal leading-[18px];
   }
 
   .text-12-regular {
-    @apply text-[12px] leading-[16px] font-normal;
+    @apply text-[12px] font-normal leading-[16px];
   }
 
   .text-12-semibold {
-    @apply text-[12px] leading-[16px] font-semibold;
+    @apply text-[12px] font-semibold leading-[16px];
   }
 
   /* ----------------------  SHADCN OVERRIDES ---------------------- */
   .shad-primary-btn {
-    @apply bg-blue-700 text-white hover:bg-blue-800 focus:bg-blue-800 rounded-[13px] transition duration-200 ease-in-out !important;
+    @apply rounded-[13px] bg-blue-700 text-white transition duration-200 ease-in-out hover:bg-blue-800 focus:bg-blue-800 !important;
   }
 
   .shad-danger-btn {
-    @apply bg-red-700 text-white hover:bg-red-800 focus:bg-red-800 transition duration-200 ease-in-out !important;
+    @apply bg-red-700 text-white transition duration-200 ease-in-out hover:bg-red-800 focus:bg-red-800 !important;
   }
 
   .shad-light-btn {
-    @apply border border-blue-500 cursor-pointer bg-blue-500 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white text-blue-700 rounded-[13px] transition duration-200 ease-in-out !important;
+    @apply cursor-pointer rounded-[13px] border border-blue-500 bg-blue-500 text-blue-700 transition duration-200 ease-in-out hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white !important;
   }
 
   .shad-input-label {
@@ -219,15 +219,15 @@ body {
   }
 
   .shad-input {
-    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-none border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-[13px] transition duration-200 ease-in-out !important;
+    @apply h-11 rounded-[13px] border-none border-blue-500 bg-blue-500 text-sm text-blue-700 transition duration-200 ease-in-out placeholder:text-blue-600 focus-visible:ring-0 focus-visible:ring-offset-0 dark:border-dark-500 dark:bg-dark-400 dark:text-white dark:placeholder:text-dark-600 !important;
   }
 
   .shad-input-icon {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply h-11 border-dark-500 bg-dark-400 placeholder:text-dark-600 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-textArea {
-    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-dashed border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0  rounded-[13px] transition duration-200 ease-in-out !important;
+    @apply rounded-[13px] border-dashed border-blue-500 bg-blue-500 text-sm text-blue-700 transition duration-200 ease-in-out placeholder:text-blue-600 focus-visible:ring-0 focus-visible:ring-offset-0 dark:border-dark-500 dark:bg-dark-400 dark:text-white dark:placeholder:text-dark-600 !important;
   }
 
   .shad-combobox-item {
@@ -239,19 +239,19 @@ body {
   }
 
   .shad-select-trigger {
-    @apply bg-blue-500 text-sm text-blue-700 dark:text-white placeholder:text-blue-600  border-dashed border-blue-500  dark:bg-dark-400 dark:placeholder:text-dark-600 dark:border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-[13px] transition duration-200 ease-in-out  focus:ring-0 focus:ring-offset-0 !important;
+    @apply h-11 rounded-[13px] border-dashed border-blue-500 bg-blue-500 text-sm text-blue-700 transition duration-200 ease-in-out placeholder:text-blue-600 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0 dark:border-dark-500 dark:bg-dark-400 dark:text-white dark:placeholder:text-dark-600 !important;
   }
 
   .shad-select-content {
-    @apply bg-blue-400 text-sm text-blue-700 dark:text-white placeholder:text-blue-600 border-dashed border-blue-500  dark:bg-dark-600 dark:placeholder:text-dark-300 dark:border-dark-500 rounded-[13px] !important;
+    @apply rounded-[13px] border-dashed border-blue-500 bg-blue-400 text-sm text-blue-700 placeholder:text-blue-600 dark:border-dark-500 dark:bg-dark-600 dark:text-white dark:placeholder:text-dark-300 !important;
   }
 
   .shad-dialog {
-    @apply bg-dark-400 border-dark-500 !important;
+    @apply border-dark-500 bg-dark-400 !important;
   }
 
   .shad-dialog button {
-    @apply focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 transition duration-200 ease-in-out !important;
+    @apply transition duration-200 ease-in-out focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
 
   .shad-error {
@@ -259,7 +259,7 @@ body {
   }
 
   .shad-table {
-    @apply rounded-lg overflow-hidden !important;
+    @apply overflow-hidden rounded-lg !important;
   }
 
   .shad-table-row-header {
@@ -271,29 +271,29 @@ body {
   }
 
   .shad-otp {
-    @apply w-full flex justify-between !important;
+    @apply flex w-full justify-between !important;
   }
 
   .shad-otp-slot {
-    @apply text-36-bold justify-center flex border border-dark-500 rounded-lg size-16 gap-4 !important;
+    @apply text-36-bold flex size-16 justify-center gap-4 rounded-lg border border-dark-500 !important;
   }
 
   .shad-alert-dialog {
-    @apply space-y-5 bg-dark-400 border-dark-500 outline-none !important;
+    @apply space-y-5 border-dark-500 bg-dark-400 outline-none !important;
   }
 
   .shad-sheet-content button {
-    @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 transition duration-200 ease-in-out !important;
+    @apply top-2 transition duration-200 ease-in-out focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
 
   /* ---------------------- REACT PHONE NUMBER INPUT OVERRIDES ---------------------- */
   .input-phone {
-    @apply h-11 w-full rounded-[13px] pl-3 text-sm border-none bg-blue-500 text-blue-700  dark:text-white placeholder:text-blue-600 dark:bg-dark-400 dark:placeholder:text-dark-600 transition duration-200 ease-in-out !important;
+    @apply h-11 w-full rounded-[13px] border-none bg-blue-500 pl-3 text-sm text-blue-700 transition duration-200 ease-in-out placeholder:text-blue-600 dark:bg-dark-400 dark:text-white dark:placeholder:text-dark-600 !important;
   }
 
   /*  ---------------------- REACT PHONE NUMBER INPUT OVERRIDES  ---------------------- */
   .date-picker {
-    @apply h-11  w-full rounded-[13px] overflow-hidden border-transparent  pl-3 text-sm border-none bg-blue-500 text-blue-700  dark:text-white placeholder:text-blue-600 dark:bg-dark-400 dark:placeholder:text-dark-600 transition duration-200 ease-in-out outline-none !important;
+    @apply h-11 w-full overflow-hidden rounded-[13px] border-none border-transparent bg-blue-500 pl-3 text-sm text-blue-700 outline-none transition duration-200 ease-in-out placeholder:text-blue-600 dark:bg-dark-400 dark:text-white dark:placeholder:text-dark-600 !important;
   }
 }
 

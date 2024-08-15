@@ -1,7 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+
+import Image from 'next/image';
+
+import {
+  FormFieldType,
+  GenderOptions,
+  PatientFormDefaultValues,
+} from '@/shared/constants';
+import { Doctors } from '@/shared/data/data';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -10,22 +18,18 @@ import { PatientFormValidation } from '@/lib/validation';
 
 import { Form, FormControl } from '@/components/ui/form';
 import { commonIcons, iconTypes } from '@/components/ui/icon';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
-import DynamicFormField from '@/components/fields/DynamicFormField';
 import SubmitButton from '@/components/common/SubmitButton';
+import DynamicFormField from '@/components/fields/DynamicFormField';
 
-import { FormFieldType, GenderOptions, PatientFormDefaultValues } from '@/shared/constants';
 import { SelectItem } from '../ui/select';
-import { Doctors } from '@/shared/data/data';
-import Image from 'next/image';
 
 // Building forms with React Hook Form and Zod. Use shadcn/ui/Form
 // npx shadcn-ui@latest add form
 
 const RegisterForm = ({ user }: { user: User }) => {
-  console.log('USER REGISTER: ', user);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // 1. Define form
@@ -44,8 +48,10 @@ const RegisterForm = ({ user }: { user: User }) => {
     // ✅ This will be type-safe and validated.
     setIsLoading(true);
     try {
+      // eslint-disable-next-line no-console
       console.log(values);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     } finally {
       setIsLoading(false);
@@ -56,7 +62,7 @@ const RegisterForm = ({ user }: { user: User }) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='flex-1 space-y-8 remove-scrollbar overflow-y-auto max-h-screen'
+        className='remove-scrollbar max-h-screen flex-1 space-y-8 overflow-y-auto'
       >
         <section className='mb-12 space-y-4'>
           <h1 className='header'>Ready to begin?</h1>
@@ -107,7 +113,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               <RadioGroup
                 onValueChange={field.onChange}
                 defaultValue={field.value}
-                className='flex flex-wrap gap-6 justify-between'
+                className='flex flex-wrap justify-between gap-6'
               >
                 {GenderOptions.map((option) => (
                   <div key={option} className='radio-group'>
@@ -187,7 +193,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         >
           {Doctors.map((doctor) => (
             <SelectItem key={doctor.id} value={doctor.full_name}>
-              <div className='flex items-center gap-2 cursor-pointer'>
+              <div className='flex cursor-pointer items-center gap-2'>
                 <Image
                   src={doctor.image}
                   alt={doctor.full_name}
@@ -195,9 +201,11 @@ const RegisterForm = ({ user }: { user: User }) => {
                   height={32}
                   className='rounded-full border border-dark-500'
                 />
-                <p className='flex flex-col lg:flex-row lg:gap-2 items-start justify-start'>
+                <p className='flex flex-col items-start justify-start lg:flex-row lg:gap-2'>
                   {doctor.title} {doctor.full_name}, {doctor.degree}{' '}
-                  <span className='text-slate-800 dark:text-white'>{doctor.specialty}</span>
+                  <span className='text-slate-800 dark:text-white'>
+                    {doctor.specialty}
+                  </span>
                 </p>
               </div>
             </SelectItem>
@@ -220,7 +228,10 @@ const RegisterForm = ({ user }: { user: User }) => {
             name='insurancePolicyNumber'
             label='Insurance Policy Number'
             placeholder='EJ7357352277'
-            iconSrc={{ name: commonIcons.INSURANCE_POLICY, type: iconTypes.COMMON }}
+            iconSrc={{
+              name: commonIcons.INSURANCE_POLICY,
+              type: iconTypes.COMMON,
+            }}
             iconAlt='Insurance Policy Number'
           />
         </div>

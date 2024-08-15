@@ -19,6 +19,7 @@ export const commonIcons = {
   HOME: 'home',
   JOB: 'job',
   INSURANCE_POLICY: 'policy',
+  ALLERGIE_PIL: 'pil',
 } as const;
 
 export type CommonIcons = (typeof commonIcons)[keyof typeof commonIcons];
@@ -67,6 +68,7 @@ export type IconSource = {
 export interface IconProps<Group extends keyof SpritesMap> {
   name: SpritesMap[Group];
   type: Group;
+  ariaLabel?: string;
   size?: IconSizes;
   className?: string;
 }
@@ -77,8 +79,15 @@ export const Icon = <Group extends keyof SpritesMap>({
   name,
   size = iconSizes.CUSTOM,
   className,
+  ariaLabel,
 }: IconProps<Group>) => (
-  <svg className={className} width={size} height={size}>
+  <svg
+    className={className}
+    width={size}
+    height={size}
+    aria-label={ariaLabel}
+    role='img'
+  >
     <use href={`/assets/icons/sprites/${type.toLowerCase()}.svg#${name}`} />
   </svg>
 );

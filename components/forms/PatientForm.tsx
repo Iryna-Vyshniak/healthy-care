@@ -1,21 +1,22 @@
 'use client';
 
 import { useState } from 'react';
+
 import { useRouter } from 'next/navigation';
+
+import { FormFieldType } from '@/shared/constants';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { createUser } from '@/lib/actions/patient.actions';
 import { UserFormValidation } from '@/lib/validation';
 
 import { Form } from '@/components/ui/form';
 import { commonIcons, iconTypes } from '@/components/ui/icon';
 
-import DynamicFormField from '@/components/fields/DynamicFormField';
 import SubmitButton from '@/components/common/SubmitButton';
-
-import { FormFieldType } from '@/shared/constants';
-import { createUser } from '@/lib/actions/patient.actions';
+import DynamicFormField from '@/components/fields/DynamicFormField';
 
 // Building forms with React Hook Form and Zod. Use shadcn/ui/Form
 // npx shadcn-ui@latest add form
@@ -23,7 +24,6 @@ import { createUser } from '@/lib/actions/patient.actions';
 const PatientForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
-  console.log('router: ', router);
   // 1. Define form
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
@@ -35,19 +35,22 @@ const PatientForm = () => {
   });
 
   // 2. Define a submit handler.
-  async function onSubmit({ name, email, phone }: z.infer<typeof UserFormValidation>) {
+  async function onSubmit({
+    name,
+    email,
+    phone,
+  }: z.infer<typeof UserFormValidation>) {
     // ✅ This will be type-safe and validated.
     setIsLoading(true);
     try {
       const userData = { name, email, phone };
-      console.log('userData: ', userData);
       const user = await createUser(userData);
-      console.log('user: ', user);
 
       if (user) {
         router.push(`/patients/${user.$id}/register`);
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     } finally {
       setIsLoading(false);
@@ -56,7 +59,7 @@ const PatientForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6 flex-1'>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='flex-1 space-y-6'>
         <section className='mb-12 space-y-4'>
           <h1 className='header'>Welcome</h1>
           <p className='text-dark-700'>Schedule your first consultation</p>
