@@ -251,7 +251,22 @@ const RegisterForm = ({ user }: { user: User }) => {
             placeholder='Loratadine 10 mg, Insulin Glargine 100 units/mL'
           />
         </div>
-        <div className='flex flex-col gap-6 xl:flex-row'></div>
+        <div className='flex flex-col gap-6 xl:flex-row'>
+          <DynamicFormField
+            control={form.control}
+            fieldType={FormFieldType.TEXTAREA}
+            name='familyMedicalHistory'
+            label='Family medical history'
+            placeholder='Mother had diabetes, father had hypertension'
+          />
+          <DynamicFormField
+            control={form.control}
+            fieldType={FormFieldType.TEXTAREA}
+            name='pastMedicalHistory'
+            label='Past medical history'
+            placeholder='Had chickenpox as a child, underwent knee surgery in 2018'
+          />
+        </div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
         <div className='flex flex-col gap-6 xl:flex-row'></div>
