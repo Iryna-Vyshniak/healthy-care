@@ -1,9 +1,9 @@
 declare type Gender =
-  | 'Male'
-  | 'Female'
-  | 'Non-binary'
-  | 'Prefer not to say'
-  | 'Only disclose to doctor';
+  | 'male'
+  | 'female'
+  | 'non-binary'
+  | 'prefer not to say'
+  | 'only disclose to doctor';
 declare type Status = 'awaiting' | 'scheduled' | 'cancelled';
 
 declare interface CustomProps {
