@@ -17,14 +17,13 @@ import {
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 
+import { Checkbox } from '../ui/checkbox';
+
 const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
   const {
     iconSrc,
-    iconAlt,
     fieldType,
     placeholder,
-    name,
-    label,
     showTimeSelect,
     dateFormat,
     renderGroup,
@@ -117,6 +116,22 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             className='shad-textArea'
             disabled={props.disabled}
           />
+        </FormControl>
+      );
+    case FormFieldType.CHECKBOX:
+      return (
+        <FormControl>
+          <div className='flex items-center gap-4'>
+            <Checkbox
+              id={props.name}
+              checked={field.value}
+              onCheckedChange={field.onChange}
+              className='shad-checkbox'
+            />
+            <label htmlFor={props.name} className='checkbox-label'>
+              {props.label}
+            </label>
+          </div>
         </FormControl>
       );
     default:
