@@ -59,10 +59,15 @@ const PatientForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='flex-1 space-y-6'>
-        <section className='mb-12 space-y-4'>
-          <h1 className='header'>Welcome</h1>
-          <p className='text-dark-700'>Schedule your first consultation</p>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className='card w-full space-y-6 rounded-[13px]'
+      >
+        <section className='mb-2 space-y-4 md:mb-12'>
+          <h2 className='header'>Welcome</h2>
+          <p className='text-dark-200 dark:text-white'>
+            Schedule your first consultation
+          </p>
         </section>
         <DynamicFormField
           control={form.control}
