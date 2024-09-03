@@ -52,13 +52,22 @@ const config = {
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
+        yanone: ['"Yanone Kaffeesatz"', 'sans-serif'],
       },
       backgroundImage: {
+        intro:
+          "radial-gradient(rgba(250, 250, 250, 0.8), rgba(164, 217, 255, 0.9), rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.9)), url('/assets/images/medical-img.jpg')",
+        'dark-intro':
+          "radial-gradient(rgba(71, 85, 105, 0.9), rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 1)), url('/assets/images/intro.jpg')",
+        appointment:
+          "radial-gradient(rgba(250, 250, 250, 0.5), rgba(164, 217, 255, 0.5), rgba(250, 250, 250, 0.5), rgba(250, 250, 250, 0.9)), url('/assets/images/appointment.png')",
+        'dark-appointment':
+          "radial-gradient(rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 1)), url('/assets/images/appointment.png')",
         events: "url('/assets/images/events-bg.png')",
         awaiting: "url('/assets/images/awaiting-bg.png')",
         abondened: "url('/assets/images/abondened-bg.png')",
         'gradient-custom':
-          'linear-gradient(90deg, #a4d9ff 0%, #809CFF 50%, #2260FF 100%)',
+          'linear-gradient(90deg, #FFFFFF 0%, #a4d9ff 50%, #FFFFFF 100%)',
       },
       borderRadius: {
         lg: 'var(--radius)',

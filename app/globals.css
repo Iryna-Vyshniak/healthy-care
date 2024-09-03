@@ -9,7 +9,6 @@
   list-style: none;
   scroll-behavior: smooth;
 }
-
 html,
 body {
   height: 100%;
@@ -88,6 +87,13 @@ body {
     @apply text-14-regular justify-items-end text-center text-dark-600 xl:text-left;
   }
 
+  .card {
+    @apply bg-blue-600 bg-opacity-10 bg-clip-padding p-6 drop-shadow-md backdrop-blur-lg backdrop-filter dark:bg-dark-300/60;
+  }
+  .appointment-card {
+    @apply bg-blue-200 bg-opacity-10 bg-clip-padding p-6 drop-shadow-md backdrop-blur-lg backdrop-filter dark:bg-dark-300/60;
+  }
+
   /* ---------------------- SUCCESS ---------------------- */
   .success-img {
     @apply m-auto flex flex-1 flex-col items-center justify-between gap-10 py-10;
@@ -113,6 +119,10 @@ body {
   /* ---------------------- FORM ---------------------- */
   .radio-group {
     @apply flex h-full w-fit min-w-fit flex-1 items-center gap-2 rounded-[13px] border border-dashed border-blue-500 bg-blue-500 p-3 text-blue-700 transition duration-200 ease-in-out placeholder:text-blue-600 dark:border-dark-500 dark:bg-dark-400 dark:text-white !important;
+  }
+
+  .shad-checkbox {
+    @apply h-4 w-4 shrink-0 rounded-sm border border-blue-500 ring-offset-white transition duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-blue-500 data-[state=checked]:text-blue-700 dark:border-dark-500 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:data-[state=checked]:bg-blue-700 dark:data-[state=checked]:text-white !important;
   }
 
   .checkbox-label {
@@ -367,4 +377,10 @@ body {
 .react-datepicker__time-list-item {
   display: flex !important;
   align-items: center !important;
+}
+
+/* CUSTOM STYLES */
+
+.clip-custom {
+  clip-path: inset(10em);
 }
