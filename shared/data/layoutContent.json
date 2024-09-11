@@ -1,0 +1,16 @@
+{
+  "header": {
+    "title": "smart",
+    "subtitle": "med",
+    "afterSubtitle": "service"
+  },
+  "footer": {
+    "copy": "©",
+    "year": 2024,
+    "company": "SMART",
+    "highlight": "MED",
+    "suffix": "SERVICE",
+    "adminLink": "/?admin=true",
+    "adminText": "Admin"
+  }
+}

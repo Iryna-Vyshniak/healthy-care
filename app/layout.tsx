@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 
+// Import metadata from a JSON file
+import metadataJson from '@/shared/data/meta.json';
+
 import { cn } from '@/lib/utils';
 
 import { ThemeProvider } from '@/components/common/ThemeProvider';
@@ -14,10 +17,12 @@ const fontSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'HealthyCare',
-  description:
-    'A healthcare patient management System designed to streamline patient registration, appointment scheduling, and medical records management for healthcare providers.',
-  icons: { icon: '/assets/icons/logo.svg' },
+  title: metadataJson.title,
+  description: metadataJson.description,
+  icons: metadataJson.icons,
+  keywords: metadataJson.keywords,
+  applicationName: metadataJson.applicationName,
+  authors: metadataJson.authors,
 };
 
 export default function RootLayout({

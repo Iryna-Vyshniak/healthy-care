@@ -1,0 +1,25 @@
+{
+  "title": "HealthyCare",
+  "description": "A healthcare patient management system designed to streamline patient registration, appointment scheduling, and medical records management for healthcare providers.",
+  "icons": [
+    {
+      "rel": "icon",
+      "url": "/assets/icons/logo.svg",
+      "sizes": "138x138",
+      "type": "image/svg+xml"
+    }
+  ],
+  "applicationName": "HealthyCare",
+  "keywords": [
+    "Healthcare",
+    "Patient Management",
+    "Medical Records",
+    "Appointment Scheduling",
+    "Healthcare Providers",
+    "Health System",
+    "Health Technology",
+    "Patient Care",
+    "Health Services"
+  ],
+  "authors": [{ "name": "Iryna Vyshniak" }]
+}

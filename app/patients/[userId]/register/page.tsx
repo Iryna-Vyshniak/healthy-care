@@ -2,26 +2,36 @@ import React from 'react';
 
 import Image from 'next/image';
 
+import layoutContent from '@/shared/data/layoutContent.json';
+
 import { getUser } from '@/lib/actions/patient.actions';
 
+import Header from '@/components/common/Header';
 import Logo from '@/components/common/Logo';
 import LogoTitle from '@/components/common/LogoTitle';
 import RegisterForm from '@/components/forms/RegisterForm';
 
 const Register = async ({ params: { userId } }: SearchParamProps) => {
   const user = await getUser(userId);
+  const { title, subtitle, afterSubtitle } = layoutContent.header;
+  const { copy, year, company, highlight, suffix } = layoutContent.footer;
   return (
     <div className='relative flex h-screen max-h-screen'>
-      <header className='fixed z-10 h-fit w-full bg-blue-300 bg-opacity-10 bg-clip-padding py-4 backdrop-blur-md backdrop-filter dark:bg-dark-300/60'>
-        <div className='container flex items-center justify-start gap-2'>
-          <Logo />
-          <LogoTitle title='smart' subtitle='med' aftersubtitle='service' />
-        </div>
-      </header>
+      <Header>
+        <Logo />
+        <LogoTitle
+          title={title}
+          subtitle={subtitle}
+          aftersubtitle={afterSubtitle}
+        />
+      </Header>
       <section className='remove-scrollbar container'>
         <div className='sub-container mt-12 max-w-[35rem] flex-1 flex-col py-10 2xl:max-w-[50rem]'>
           <RegisterForm user={user} />
-          <p className='copyright py-12 text-dark-600'>© 2024 HealthyCare</p>
+          <p className='copyright py-12 text-dark-600'>
+            {copy} {year} {company}{' '}
+            <span className='text-green-600'>{highlight}</span> {suffix}
+          </p>
         </div>
       </section>
       <Image
