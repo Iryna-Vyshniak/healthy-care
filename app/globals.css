@@ -285,11 +285,11 @@ body {
   }
 
   .shad-otp-slot {
-    @apply text-36-bold flex size-16 justify-center gap-4 rounded-lg border border-dark-500 !important;
+    @apply text-36-bold flex size-16 justify-center gap-4 rounded-lg border border-dark-500 dark:text-white !important;
   }
 
   .shad-alert-dialog {
-    @apply space-y-5 border-dark-500 bg-dark-400 outline-none !important;
+    @apply space-y-5 border-dark-500 bg-blue-500 outline-none dark:bg-dark-400 !important;
   }
 
   .shad-sheet-content button {

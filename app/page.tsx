@@ -7,12 +7,16 @@ import Header from '@/components/common/Header';
 import Logo from '@/components/common/Logo';
 import LogoTitle from '@/components/common/LogoTitle';
 import PatientForm from '@/components/forms/PatientForm';
+import PasskeyModal from '@/components/modal/PasskeyModal';
 
-export default function Home() {
+export default function Home({ searchParams }: SearchParamProps) {
   const homeContent = content.home;
   const { title, subtitle, afterSubtitle } = layoutContent.header;
   const { copy, year, company, highlight, suffix, adminLink, adminText } =
     layoutContent.footer;
+
+  const isAdmin = searchParams?.admin === 'true';
+
   return (
     <div className='flex h-screen max-h-screen flex-col bg-intro bg-cover bg-left bg-no-repeat dark:bg-dark-intro dark:bg-center'>
       <Header>
@@ -23,7 +27,7 @@ export default function Home() {
           aftersubtitle={afterSubtitle}
         />
       </Header>
-
+      {isAdmin && <PasskeyModal />}
       <section className='container mb-4 mt-12 lg:flex lg:items-center lg:justify-center'>
         <div className='card text-base-100 hidden h-auto w-full max-w-[31rem] flex-col items-center justify-center space-y-6 rounded-[13px] pl-10 pr-20 font-yanone text-xl xl:flex'>
           <h1 className='text-base-100 mb-8 text-5xl font-bold'>

@@ -49,6 +49,7 @@ const SuccessPage = async ({
         {' '}
         <section className='flex flex-col items-center justify-center gap-12'>
           <Image
+            unoptimized
             src={successMessage.imageSrc}
             height={160}
             width={160}
