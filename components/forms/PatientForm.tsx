@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { FormFieldType } from '@/shared/constants';
+import formData from '@/shared/data/forms.json';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -13,7 +14,13 @@ import { createUser } from '@/lib/actions/patient.actions';
 import { UserFormValidation } from '@/lib/validation';
 
 import { Form } from '@/components/ui/form';
-import { commonIcons, iconTypes } from '@/components/ui/icon';
+import {
+  CommonIcons,
+  commonIcons,
+  HomeIcons,
+  IconSource,
+  iconTypes,
+} from '@/components/ui/icon';
 
 import SubmitButton from '@/components/common/SubmitButton';
 import DynamicFormField from '@/components/fields/DynamicFormField';
@@ -24,6 +31,7 @@ import DynamicFormField from '@/components/fields/DynamicFormField';
 const PatientForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
+  const { title, subtitle, fields, submit } = formData.patientForm;
   // 1. Define form
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
@@ -64,37 +72,31 @@ const PatientForm = () => {
         className='card w-full space-y-6 rounded-[13px]'
       >
         <section className='mb-2 space-y-4 md:mb-12'>
-          <h2 className='header'>Welcome</h2>
-          <p className='text-dark-200 dark:text-white'>
-            Schedule your first consultation
-          </p>
+          <h2 className='header'>{title}</h2>
+          <p className='text-dark-200 dark:text-white'>{subtitle}</p>
         </section>
-        <DynamicFormField
-          control={form.control}
-          fieldType={FormFieldType.INPUT}
-          name='name'
-          label='Full Name'
-          placeholder='John Doe'
-          iconSrc={{ name: commonIcons.USER, type: iconTypes.COMMON }}
-          iconAlt='user'
-        />
-        <DynamicFormField
-          control={form.control}
-          fieldType={FormFieldType.INPUT}
-          name='email'
-          label='Email'
-          placeholder='johndoe@example.com'
-          iconSrc={{ name: commonIcons.EMAIL, type: iconTypes.COMMON }}
-          iconAlt='email'
-        />
-        <DynamicFormField
-          control={form.control}
-          fieldType={FormFieldType.PHONE_INPUT}
-          name='phone'
-          label='Phone Number'
-          placeholder='(777) 123-4567'
-        />
-        <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
+        {fields.map(({ name, label, placeholder, iconSrc, iconAlt }) => (
+          <DynamicFormField
+            key={label}
+            control={form.control}
+            fieldType={
+              name !== 'phone' ? FormFieldType.INPUT : FormFieldType.PHONE_INPUT
+            }
+            name={name}
+            label={label}
+            placeholder={placeholder}
+            iconSrc={
+              iconSrc
+                ? {
+                    name: commonIcons[iconSrc.name as keyof typeof commonIcons],
+                    type: iconTypes[iconSrc.type as keyof typeof iconTypes],
+                  }
+                : undefined
+            }
+            iconAlt={iconAlt || ''}
+          />
+        ))}
+        <SubmitButton isLoading={isLoading}>{submit}</SubmitButton>
       </form>
     </Form>
   );
