@@ -1,0 +1,71 @@
+{
+  "patientForm": {
+    "title": "Welcome",
+    "subtitle": "Schedule your first consultation",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Full Name",
+        "placeholder": "John Doe",
+        "type": "text",
+        "iconSrc": {
+          "name": "USER",
+          "type": "COMMON"
+        },
+        "iconAlt": "user"
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "placeholder": "johndoe@example.com",
+        "type": "email",
+        "iconSrc": {
+          "name": "EMAIL",
+          "type": "COMMON"
+        },
+        "iconAlt": "email"
+      },
+      {
+        "name": "phone",
+        "label": "Phone Number",
+        "placeholder": "(777) 123-4567",
+        "type": "phone"
+      }
+    ],
+    "submit": "Get Started"
+  },
+  "register": {
+    "title": "Ready to begin?",
+    "subtitle": "Let us know more about yourself",
+    "personalInformation": {
+      "heading": "Personal Information"
+    },
+    "medicalInformation": {
+      "heading": "Medical Information"
+    },
+    "identificationAndVerification": {
+      "heading": "Identification and Verification"
+    },
+    "consentAndPrivacy": {
+      "heading": "Consent and Privacy",
+      "fields": [
+        {
+          "name": "treatmentConsent",
+          "label": "I consent to receive treatment for my health condition.",
+          "type": "checkbox"
+        },
+        {
+          "name": "disclosureConsent",
+          "label": "I consent to the use and disclosure of my health information for treatment purposes.",
+          "type": "checkbox"
+        },
+        {
+          "name": "privacyConsent",
+          "label": "I acknowledge that I have reviewed and agree to the privacy policy.",
+          "type": "checkbox"
+        }
+      ]
+    },
+    "submit": "Get Started"
+  }
+}
