@@ -11,6 +11,7 @@ import {
   PatientFormDefaultValues,
 } from '@/shared/constants';
 import { Doctors } from '@/shared/data/doctors';
+import formData from '@/shared/data/forms.json';
 import { Identification } from '@/shared/data/identification';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -36,6 +37,15 @@ import { SelectItem } from '../ui/select';
 const RegisterForm = ({ user }: { user: User }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
+  const {
+    title,
+    subtitle,
+    personalInformation,
+    medicalInformation,
+    identificationAndVerification,
+    consentAndPrivacy,
+    submit,
+  } = formData.register;
 
   // 1. Define form
   const form = useForm<z.infer<typeof PatientFormValidation>>({
@@ -93,13 +103,13 @@ const RegisterForm = ({ user }: { user: User }) => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className='flex-1 space-y-8'>
         <section className='mb-12 space-y-4'>
-          <h1 className='header'>Ready to begin?</h1>
-          <p className='text-dark-700'>Let us know more about yourself</p>
+          <h1 className='header'>{title}</h1>
+          <p className='text-dark-700'>{subtitle}</p>
         </section>
         <section className='space-y-6'>
           <div className='mb-9 space-y-1'>
             {' '}
-            <h2 className='sub-header'>Personal Information</h2>
+            <h2 className='sub-header'>{personalInformation.heading}</h2>
           </div>
         </section>
         <DynamicFormField
@@ -208,7 +218,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         <section className='space-y-6'>
           <div className='mb-9 space-y-1'>
             {' '}
-            <h2 className='sub-header'>Medical Information</h2>
+            <h2 className='sub-header'>{medicalInformation.heading}</h2>
           </div>
         </section>
 
@@ -297,7 +307,9 @@ const RegisterForm = ({ user }: { user: User }) => {
         </div>
         <section className='space-y-6'>
           <div className='mb-9 space-y-1'>
-            <h2 className='sub-header'>Identification and Verification</h2>
+            <h2 className='sub-header'>
+              {identificationAndVerification.heading}
+            </h2>
           </div>
         </section>
 
@@ -337,33 +349,20 @@ const RegisterForm = ({ user }: { user: User }) => {
 
         <section className='space-y-6'>
           <div className='mb-9 space-y-1'>
-            <h2 className='sub-header'>Consent and Privacy</h2>
+            <h2 className='sub-header'>{consentAndPrivacy.heading}</h2>
           </div>
 
-          <DynamicFormField
-            fieldType={FormFieldType.CHECKBOX}
-            control={form.control}
-            name='treatmentConsent'
-            label='I consent to receive treatment for my health condition.'
-          />
-
-          <DynamicFormField
-            fieldType={FormFieldType.CHECKBOX}
-            control={form.control}
-            name='disclosureConsent'
-            label='I consent to the use and disclosure of my health
-            information for treatment purposes.'
-          />
-
-          <DynamicFormField
-            fieldType={FormFieldType.CHECKBOX}
-            control={form.control}
-            name='privacyConsent'
-            label='I acknowledge that I have reviewed and agree to the
-            privacy policy'
-          />
+          {consentAndPrivacy.fields.map((field) => (
+            <DynamicFormField
+              key={field.name}
+              control={form.control}
+              fieldType={FormFieldType.CHECKBOX}
+              name={field.name}
+              label={field.label}
+            />
+          ))}
         </section>
-        <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
+        <SubmitButton isLoading={isLoading}>{submit}</SubmitButton>
       </form>
     </Form>
   );
