@@ -67,5 +67,61 @@
       ]
     },
     "submit": "Get Started"
+  },
+  "appointment": {
+    "title": "New Appointment",
+    "subtitle": "Schedule a new appointment in 15 seconds",
+    "fields": {
+      "primaryPhysician": {
+        "label": "Doctor",
+        "placeholder": "Select a doctor"
+      },
+      "schedule": {
+        "label": "Expected appointment date",
+        "dateFormat": "MM/dd/yyyy  -  h:mm aa"
+      },
+      "reason": {
+        "label": "Reason for Visit",
+        "placeholder": "Routine check-up or medical concern"
+      },
+      "note": {
+        "label": "Any Additional Information",
+        "placeholder": "Share any specific preferences or notes"
+      }
+    }
+  },
+  "schedule": {
+    "fields": {
+      "primaryPhysician": {
+        "label": "Doctor",
+        "placeholder": "Select a doctor"
+      },
+      "schedule": {
+        "label": "Expected appointment date",
+        "dateFormat": "MM/dd/yyyy  -  h:mm aa"
+      }
+    }
+  },
+  "cancel": {
+    "fields": {
+      "cancellationReason": {
+        "label": "Cancellation Explanation",
+        "placeholder": "Unexpected event occurred"
+      }
+    }
+  },
+  "status": {
+    "create": {
+      "status": "pending",
+      "buttonLabel": "Submit Appointment"
+    },
+    "schedule": {
+      "status": "scheduled",
+      "buttonLabel": "Schedule Appointment"
+    },
+    "cancel": {
+      "status": "cancelled",
+      "buttonLabel": "Cancel Appointment"
+    }
   }
 }
