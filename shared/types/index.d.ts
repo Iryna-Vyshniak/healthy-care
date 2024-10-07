@@ -93,3 +93,13 @@ interface Doctor {
   contact_info: ContactInfo;
   professional_info: ProfessionalInfo;
 }
+
+declare type CreateAppointmentParams = {
+  userId: string;
+  patient: string;
+  primaryPhysician: string;
+  reason: string;
+  schedule: Date;
+  status: Status;
+  note: string | undefined;
+};
