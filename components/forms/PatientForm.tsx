@@ -71,7 +71,7 @@ const PatientForm = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         className='card w-full space-y-6 rounded-[13px]'
       >
-        <section className='mb-2 space-y-4 md:mb-12'>
+        <section className='mb-2 space-y-4 md:mb-8'>
           <h2 className='header'>{title}</h2>
           <p className='text-dark-200 dark:text-white'>{subtitle}</p>
         </section>

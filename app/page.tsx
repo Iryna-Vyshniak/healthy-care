@@ -26,18 +26,20 @@ export default function Home() {
 
       <section className='container mb-4 mt-12 lg:flex lg:items-center lg:justify-center'>
         <div className='card text-base-100 hidden h-auto w-full max-w-[31rem] flex-col items-center justify-center space-y-6 rounded-[13px] pl-10 pr-20 font-yanone text-xl xl:flex'>
-          <h1 className='text-base-100 mb-8 text-6xl font-bold'>
+          <h1 className='text-base-100 mb-8 text-5xl font-bold'>
             {homeContent.section.mainHeading}
           </h1>
           {homeContent.section.paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p className='text-pretty text-xl' key={index}>
+              {paragraph}
+            </p>
           ))}
         </div>
         <div className='sub-container flex max-w-[31rem] items-center justify-center'>
           <PatientForm />
         </div>
       </section>
-      <footer className='text-14-regular h-fit w-full bg-blue-100 bg-opacity-10 bg-clip-padding p-4 backdrop-blur-md backdrop-filter dark:bg-dark-300/60'>
+      <footer className='text-14-regular h-fit w-full bg-blue-100 bg-opacity-10 bg-clip-padding p-2 backdrop-blur-md backdrop-filter dark:bg-dark-300/60'>
         <div className='container flex items-center justify-between gap-2'>
           <p className='justify-items-end text-dark-200 dark:text-white xl:text-left'>
             {copy} {year} {company}{' '}

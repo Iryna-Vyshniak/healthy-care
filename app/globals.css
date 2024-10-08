@@ -96,7 +96,7 @@ body {
 
   /* ---------------------- SUCCESS ---------------------- */
   .success-img {
-    @apply m-auto flex flex-1 flex-col items-center justify-between gap-10 py-10;
+    @apply mx-auto my-0 flex flex-1 flex-col items-center justify-between gap-10 py-10;
   }
 
   .request-details {
@@ -351,7 +351,8 @@ body {
 }
 
 .react-datepicker__time-list-item:hover {
-  background-color: #0f172a !important;
+  background-color: #6e7ea3 !important;
+  color: #fafbfd !important;
 }
 
 .react-datepicker__input-container input {
