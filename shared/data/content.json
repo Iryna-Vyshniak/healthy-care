@@ -8,5 +8,21 @@
         "Our system allows you to manage your health from the comfort of your home, ensuring seamless care coordination."
       ]
     }
+  },
+  "success": {
+    "successMessage": {
+      "imageSrc": "/assets/gifs/success.gif",
+      "imageAlt": "success",
+      "titlePrefix": "Your ",
+      "highlight": "appointment request",
+      "title": " was successfully received!",
+      "subtitle": "We will contact you soon to confirm the details."
+    },
+    "requestDetails": {
+      "label": "Appointment details you requested:"
+    },
+    "newAppointmentButton": {
+      "label": "New Appointment"
+    }
   }
 }
