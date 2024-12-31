@@ -74,3 +74,11 @@ export const formatDateTime = (
     timeOnly: formattedTime,
   };
 };
+
+export function encryptKey(passkey: string) {
+  return btoa(passkey); // btoa – приймає рядок, який кодується в Base64
+}
+
+export function decryptKey(passkey: string) {
+  return atob(passkey); //  приймає Base64 рядок і повертає оригінальний текст
+}
