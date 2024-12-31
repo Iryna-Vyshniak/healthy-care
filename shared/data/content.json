@@ -24,5 +24,10 @@
     "newAppointmentButton": {
       "label": "New Appointment"
     }
+  },
+  "passkey": {
+    "title": "Admin Access Verification",
+    "description": "To access the admin page, please enter the passkey.",
+    "actionLabel": "Enter Admin Passkey"
   }
 }
