@@ -71,6 +71,7 @@ export interface IconProps<Group extends keyof SpritesMap> {
   ariaLabel?: string;
   size?: IconSizes;
   className?: string;
+  onClick?: () => void;
 }
 
 // Icon component definition
@@ -80,6 +81,7 @@ export const Icon = <Group extends keyof SpritesMap>({
   size = iconSizes.CUSTOM,
   className,
   ariaLabel,
+  onClick,
 }: IconProps<Group>) => (
   <svg
     className={className}
@@ -87,6 +89,7 @@ export const Icon = <Group extends keyof SpritesMap>({
     height={size}
     aria-label={ariaLabel}
     role='img'
+    onClick={onClick}
   >
     <use href={`/assets/icons/sprites/${type.toLowerCase()}.svg#${name}`} />
   </svg>
